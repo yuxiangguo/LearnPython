@@ -31,3 +31,30 @@ print("ret8:%s"%ret8)
 #在字符串前面加上r表示原生字符串
 ret9 =re.match(r"c:\\a", "c:\\a\b\c").group()
 print("ret9:%s"%ret9)
+
+ret10 = re.match('[A-Z][a-z]*', 'Mm').group()
+print("ret10:%s"%ret10)
+#后面加*号匹配小写字符出现零次或无限次
+ret11 = re.match('[A-Z][a-z]*', 'MasasaLLL').group()
+print("ret11:%s"%ret11)
+# +号代表字母至少匹配一次
+ret12 = re.match("[a-zA-Z]+[\w_]*", "name1___22a").group()
+print("ret12:%s"%ret12)
+
+ret13 = re.match("[1-9]?[0-9]", "09").group()
+print("ret13:%s"%ret13)
+
+ret14 = re.match(r"[\w]{4,20}@163\.com$", "aoi23sdsdsqw22222@163.com").group()
+print("ret14:%s"%ret14)
+# \b匹配单词的边界
+ret15 = re.match(r".*\bver\b", "ho ver abc").group()
+print("ret15:%s"%ret15)
+# \B 匹配非单词的边界
+ret16 = re.match(r".*\Bver\B", "ho verabc").group()
+print("ret16:%s"%ret16)
+
+ret17 = re.match(r"([^.]*)-(\d+)", "010-90909090as").group()
+print("ret17:%s"%ret17)
+
+
+
